@@ -22,7 +22,7 @@ To set them all up, run
 
 ```
 
-ansible-galaxy install -r requirements.txt
+ansible-galaxy install -r requirements.conf
 
 ```
 
