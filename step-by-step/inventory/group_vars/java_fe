@@ -1,11 +1,16 @@
 ---
 # JAVA FE variables
 
-java_iface: em1
+java_iface: em2.1000
 
----
+##################################################################
+#
+# VLAN configuration
+#
+# Note : Configuration on child/childre overrides the parent's
+#
+
 # IF using vlans
 vlan_iface: em2
 vlan_tag: 1000
 vlan_gw: 172.33.255.254
-

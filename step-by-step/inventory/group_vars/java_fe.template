@@ -3,8 +3,13 @@
 
 java_iface: em1
 
----
-# IF using vlans
+##################################################################
+#
+# VLAN configuration
+#
+# Note : Configuration on child/childre overrides the parent's
+#
+
 vlan_iface: em2
 vlan_tag: 1000
 vlan_gw: 172.33.255.254

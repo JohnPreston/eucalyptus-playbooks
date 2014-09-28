@@ -10,7 +10,7 @@
   - JohnPreston.eucalyptus-setup
   vars:
   - networking_mode: EDGE
-  - use_vlans: yes
+  - use_vlans: true
 
 - hosts: all
   roles:
@@ -19,16 +19,14 @@
   - JohnPreston.eucalyptus-start
   vars:
   - networking_mode: EDGE
-  - use_vlans: yes
+  - use_vlans: true
   - cpu_overcommit: 4
-
 
 - hosts: clc
   roles:
   - JohnPreston.eucalyptus-configure
   vars:
   - networking_mode: EDGE
-  - use_vlans: yes
+  - use_vlans: true
   - osg_provider: walrus
   - euca_admin_zip_file: /root/euca-admin.zip
-
