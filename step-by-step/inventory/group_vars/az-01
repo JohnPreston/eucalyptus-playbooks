@@ -1,0 +1,13 @@
+---
+# Variables applicable to all AZ-01 components
+
+---
+# Partition / AZ / Cluster name
+partition: az-01
+
+---
+# In case of VLANs
+
+vlan_tag: 1000
+vlan_iface: em2
+vlan_gw: 172.33.255.254

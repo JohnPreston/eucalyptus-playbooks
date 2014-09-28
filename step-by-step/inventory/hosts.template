@@ -1,0 +1,72 @@
+---
+# HOSTS template
+
+
+---
+# Cloud Controller server
+# Must be UNIQUE
+
+[clc]
+
+---
+# Walrus server
+# Must be UNIQUE host
+# Not mandatory if you are using Walrus as OSG backend
+[walrus]
+
+
+---
+# User Facing Services server(s)
+# Can have multiple | Minumum 1 server
+# ufs_name: Variable unique for 1 UFS | value different for each hosts
+[ufs]
+
+---
+# CC of AZ-01
+[cc-az-01]
+
+---
+# SC of AZ-01
+[sc-az-01]
+
+# NCs of AZ-01
+[nc-az-01]
+
+---
+# Defines all CCs
+
+[cc:children]
+cc-ac-01
+
+---
+# Define all SCs
+
+[sc:children]
+sc-az-01
+
+---
+# Defines all NCs
+[nc:children]
+nc-az-01
+
+---
+# Defines an Availability Zone / Cluster
+
+[az-01:children]
+cc-az-01
+sc-az-01
+nc-az-01
+
+---
+# Defines az-01 variables
+# partition is mandatory
+
+---
+# Defines all Eucalyptus JAVA Components
+
+[java_fe:children]
+clc
+walrus
+ufs
+sc
+

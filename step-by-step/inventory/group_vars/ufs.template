@@ -1,0 +1,7 @@
+---
+# Variables applicable to all UFS
+
+java_iface: em1
+
+vlan_iface: em2
+vlan_tag: 1000

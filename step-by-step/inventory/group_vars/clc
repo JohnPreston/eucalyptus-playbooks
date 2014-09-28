@@ -1,0 +1,9 @@
+---
+# CLC Specific variables
+
+---
+# VLAN Configuration
+
+vlan_ip: 172.33.0.2/16
+vlan_iface: em2
+vlan_gw: 172.33.255.254

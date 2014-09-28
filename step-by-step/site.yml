@@ -1,0 +1,34 @@
+---
+# Eucalyptus Cloud playbook - Step by Step setup
+#
+
+- hosts: all
+
+- hosts: all
+  roles:
+  - JohnPreston.eucalyptus-network
+  - JohnPreston.eucalyptus-setup
+  vars:
+  - networking_mode: EDGE
+  - use_vlans: yes
+
+- hosts: all
+  roles:
+  - JohnPreston.eucalyptus-initialize
+  - JohnPreston.eucalyptus-register
+  - JohnPreston.eucalyptus-start
+  vars:
+  - networking_mode: EDGE
+  - use_vlans: yes
+  - cpu_overcommit: 4
+
+
+- hosts: clc
+  roles:
+  - JohnPreston.eucalyptus-configure
+  vars:
+  - networking_mode: EDGE
+  - use_vlans: yes
+  - osg_provider: walrus
+  - euca_admin_zip_file: /root/euca-admin.zip
+

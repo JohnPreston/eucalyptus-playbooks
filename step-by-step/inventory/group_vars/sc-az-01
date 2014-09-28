@@ -1,0 +1,9 @@
+---
+# Variables applicable to all SCs
+
+java_iface: em1
+
+vlan_iface; em2
+vlan_gw: 172.33.255.254
+vlan_tag: 1000
+

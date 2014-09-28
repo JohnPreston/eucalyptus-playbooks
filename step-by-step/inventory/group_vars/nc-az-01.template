@@ -1,0 +1,8 @@
+---
+# Variables applicable to all NCs
+
+---
+# VLAN configuration
+vlan_iface: em2
+bridge_prefix: eucabr
+bridge_id: 1

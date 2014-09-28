@@ -1,0 +1,7 @@
+---
+# Variables applicable to all CCs
+
+vnet_public: em1
+vnet_private: em2
+
+vlan_gw: 172.33.255.254
