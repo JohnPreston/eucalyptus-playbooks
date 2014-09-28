@@ -46,7 +46,7 @@ odc-c-36 vlan_ip=172.33.0.36/16
 # Defines all CCs
 
 [cc:children]
-cc-ac-01
+cc-az-01
 
 ---
 # Define all SCs

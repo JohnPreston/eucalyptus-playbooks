@@ -36,7 +36,7 @@
 # Defines all CCs
 
 [cc:children]
-cc-ac-01
+cc-az-01
 
 ---
 # Define all SCs
