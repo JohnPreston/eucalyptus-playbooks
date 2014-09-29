@@ -1,5 +1,7 @@
 ---
-# Variables applicable to all NCs
+# Variables applicable to all UFS
+
+java_iface: em1
 
 ##################################################################
 #
@@ -8,9 +10,5 @@
 # Note : Configuration on child/childre overrides the parent's
 #
 
-vnet_private: em2
-vnet_public: em2
-
 vlan_iface: em2
-bridge_prefix: eucabr
-bridge_id: 1
+vlan_tag: 1000

@@ -1,7 +1,7 @@
 ---
 # CLC Specific variables
 
-java_iface: em2.1000
+java_iface: em2.200
 
 ##################################################################
 #
@@ -10,7 +10,6 @@ java_iface: em2.1000
 # Note : Configuration on child/childre overrides the parent's
 #
 
-vlan_ip: 172.33.0.2/16
 vlan_iface: em2
-vlan_tag: 1000
+vlan_tag: 200
 vlan_gw: 172.33.255.254

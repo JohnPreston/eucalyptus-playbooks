@@ -11,7 +11,6 @@
   vars:
   - networking_mode: EDGE
   - use_vlans: true
-  - vlan_routes: []
 
 - hosts: all
   roles:
@@ -19,9 +18,9 @@
   - JohnPreston.eucalyptus-register
   - JohnPreston.eucalyptus-start
   vars:
-  - cpu_overcommit: 4
   - networking_mode: EDGE
   - use_vlans: true
+  - cpu_overcommit: 4
 
 - hosts: clc
   roles:
@@ -31,5 +30,3 @@
   - use_vlans: true
   - osg_provider: walrus
   - euca_admin_zip_file: /root/euca-admin.zip
-  - sc_clusters:
-    - {'partition': 'az-01', 'mode': 'das', 'properties': [ {'name': 'dasdevice', 'value': 'vg01'}]}

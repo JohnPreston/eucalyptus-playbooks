@@ -1,39 +1,48 @@
+---
 # HOSTS template
-
 
 # Cloud Controller server
 # Must be UNIQUE
 
 [clc]
-
+odc-c-32 vlan_ip=172.33.0.32/16
 
 # Walrus server
 # Must be UNIQUE host
 # Not mandatory if you are using Walrus as OSG backend
 [walrus]
-
-
+odc-c-33 vlan_ip=172.33.0.33/16
 
 # User Facing Services server(s)
 # Can have multiple | Minumum 1 server
 # ufs_name: Variable unique for 1 UFS | value different for each hosts
 [ufs]
-
+odc-c-33 ufs_name=ufs-01 vlan_ip=172.33.0.33/16
 
 # CC of AZ-01
 [cc-az-01]
-
+odc-c-34 cc_name=cc-az-01 vlan_ip=172.33.0.34/16
 
 # SC of AZ-01
 [sc-az-01]
+odc-c-34 sc_name=sc-az-01 vlan_ip=172.33.0.34/16
 
 # NCs of AZ-01
 [nc-az-01]
+odc-c-35 vlan_ip=172.33.0.35/16
+odc-c-36 vlan_ip=172.33.0.36/16
+
+####################################################################
+#
+# Beyond this point, variables should be set in groups_vars !!!
+#
+
 
 # Defines all CCs
 
 [cc:children]
 cc-az-01
+
 
 # Define all SCs
 

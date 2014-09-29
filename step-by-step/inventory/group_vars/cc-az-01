@@ -1,7 +1,7 @@
 ---
 # Variables applicable to all CCs
 
-vnet_public: em1
+vnet_public: em2
 vnet_private: em2
 
 ##################################################################

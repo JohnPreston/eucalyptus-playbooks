@@ -1,7 +1,7 @@
 ---
 # Variables of Walrus
 
-java_iface: em2.1000
+java_iface: em2.200
 
 ##################################################################
 #
@@ -11,6 +11,6 @@ java_iface: em2.1000
 #
 
 vlan_iface: em2
-vlan_tag: 1000
+vlan_tag: 200
 vlan_gw: 172.33.255.254
 
