@@ -6,17 +6,17 @@ Requirements
 
 This playbook requires to have these roles setup from Ansible-Galaxy:
 
-- JohnPreston.eucalyptus-network
+- [JohnPreston.eucalyptus-network](https://github.com/JohnPreston/eucalyptus-network)
 
-- JohnPreston.eucalyptus-setup
+- [JohnPreston.eucalyptus-setup](https://github.com/JohnPreston/eucalyptus-network)
 
-- JohnPreston.eucalyptus-initialize
+- [JohnPreston.eucalyptus-initialize](https://github.com/JohnPreston/eucalyptus-network)
 
-- JohnPreston.eucalyptus-register
+- [JohnPreston.eucalyptus-register](https://github.com/JohnPreston/eucalyptus-network)
 
-- JohnPreston.eucalyptus-start
+- [JohnPreston.eucalyptus-start](https://github.com/JohnPreston/eucalyptus-network)
 
-- JohnPreston.eucalyptus-configure
+- [JohnPreston.eucalyptus-configure](https://github.com/JohnPreston/eucalyptus-network)
 
 To set them all up, run 
 
