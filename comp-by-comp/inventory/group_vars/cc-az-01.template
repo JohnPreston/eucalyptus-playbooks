@@ -1,0 +1,14 @@
+---
+# Variables applicable to all CCs
+
+vnet_public: em1
+vnet_private: em2
+
+##################################################################
+#
+# VLAN configuration
+#
+# Note : Configuration on child/childre overrides the parent's
+#
+
+vlan_gw: 172.33.255.254
