@@ -42,7 +42,7 @@ You will find some hosts examples inside the inventory folder. Treat them as tem
 | nc | Eucalyptus Node Controller | none | none
 
 
-![Alt text](playbook-demo.png "Host deployment")
+![Hosts file explanation](/playbook-demo.png?raw=true "Host deployment")
 
 
 * Warning * in case you are going to use VLANs, you have to specify the vlan_ip you want to use, in CIDR notation.
