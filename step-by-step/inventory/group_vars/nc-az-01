@@ -6,7 +6,9 @@
 vnet_private: em2
 vnet_public: em2
 
-vlan_iface: em2
-
 bridge_prefix: eucabr
 bridge_id: 1
+
+# Fo VLANs
+# vlan_iface: em2
+

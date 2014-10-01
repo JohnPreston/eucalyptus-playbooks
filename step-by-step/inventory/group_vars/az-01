@@ -1,10 +1,10 @@
 ##################################################################
 #
-# VLAN configuration
+# AZ-01 variables
 #
 
 partition: az-01
 
-vlan_iface: em2
-vlan_tag: 200
-vlan_gw: 172.33.255.254
+# vlan_iface: em2
+# vlan_tag: 200
+# vlan_gw: 172.33.255.254

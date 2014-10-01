@@ -3,8 +3,6 @@
 #
 
 - hosts: all
-
-- hosts: all
   roles:
   - JohnPreston.eucalyptus-network
   - JohnPreston.eucalyptus-setup
@@ -13,29 +11,16 @@
   - JohnPreston.eucalyptus-start
   vars:
   - cpu_overcommit: 4
-  - networking_mode: EDGE
-  - use_vlans: true
-  - vlan_routes: []
+  - networking_mode: MANAGED-NOVLAN
+  vars_files:
+  - vars/availability_zones.yml
 
 - hosts: clc
   roles:
   - JohnPreston.eucalyptus-configure
   vars:
-  - networking_mode: EDGE
-  - use_vlans: true
+  - networking_mode: MANAGED-NOVLAN
   - osg_provider: walrus
-  - euca_admin_zip_file: /root/euca-admin.zip
-  - sc_clusters:
-    - {'partition': 'az-01', 'mode': 'das', 'properties': [ {'name': 'dasdevice', 'value': 'vg01'}]}
-  - instance_dns_servers:
-    - "8.8.8.8"
-  - instance_dns_domain: emea.lan
-  - pub_ips:
-      - "109.104.120.41-109.104.120.59"
-  - clusters:
-    - {"Name": "az-01", "MacPrefix": "d0:0d",
-      "Subnet": { "Name": "172.33.0.0",
-      "Subnet": "172.33.0.0",
-      "Netmask": "255.255.0.0",
-      "Gateway": "172.33.255.254"},
-      "PrivateIps": ["172.33.1.0-172.33.254.254"]}
+  vars_files:
+  - vars/availability_zones.yml
+
