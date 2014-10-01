@@ -1,16 +1,10 @@
----
-# Variables applicable to all AZ-01 components
-
-# Partition / AZ / Cluster name
-partition: az-01
-
 ##################################################################
 #
 # VLAN configuration
 #
-# Note : Configuration on child/childre overrides the parent's
-#
 
-vlan_tag: 200
+partition: az-01
+
 vlan_iface: em2
+vlan_tag: 200
 vlan_gw: 172.33.255.254

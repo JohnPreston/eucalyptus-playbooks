@@ -8,13 +8,6 @@
   roles:
   - JohnPreston.eucalyptus-network
   - JohnPreston.eucalyptus-setup
-  vars:
-  - networking_mode: EDGE
-  - use_vlans: true
-  - vlan_routes: []
-
-- hosts: all
-  roles:
   - JohnPreston.eucalyptus-initialize
   - JohnPreston.eucalyptus-register
   - JohnPreston.eucalyptus-start
@@ -22,6 +15,7 @@
   - cpu_overcommit: 4
   - networking_mode: EDGE
   - use_vlans: true
+  - vlan_routes: []
 
 - hosts: clc
   roles:
