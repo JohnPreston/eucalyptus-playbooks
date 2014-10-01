@@ -1,10 +1,13 @@
 ##################################################################
 #
-# UFS variables
+# Walrus configuration
 #
-
-java_iface: em2
-
+#
+# walrus_name=
+#
+# java_iface: em2
+#
 # vlan_iface: em2
 # vlan_tag: 200
 # vlan_gw: 172.33.255.254
+#

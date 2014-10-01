@@ -6,6 +6,13 @@
   roles:
   - JohnPreston.eucalyptus-network
   - JohnPreston.eucalyptus-setup
+  vars:
+  - networking_mode: MANAGED-NOVLAN
+  vars_files:
+  - vars/availability_zones.yml
+
+- hots: all
+  roles:
   - JohnPreston.eucalyptus-initialize
   - JohnPreston.eucalyptus-register
   - JohnPreston.eucalyptus-start
@@ -23,4 +30,3 @@
   - osg_provider: walrus
   vars_files:
   - vars/availability_zones.yml
-

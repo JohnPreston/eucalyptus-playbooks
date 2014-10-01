@@ -1,12 +1,11 @@
 ##################################################################
 #
-# Walrus configuration
+# VLAN configuration
 #
-
-walrus_name=walrus_emea-01
-
-java_iface: em2
-
+#
+# java_iface: em2
+#
 # vlan_iface: em2
 # vlan_tag: 200
 # vlan_gw: 172.33.255.254
+#

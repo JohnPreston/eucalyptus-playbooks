@@ -2,9 +2,12 @@
 #
 # VLAN configuration
 #
-
-java_iface: em2
-
+#
+# vnet_private: em2
+# vnet_public: em2
+#
+# bridge_prefix: eucabr
+# bridge_id: 1
+#
 # vlan_iface: em2
-# vlan_tag: 200
-# vlan_gw: 172.33.255.254
+#
