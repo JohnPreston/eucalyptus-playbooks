@@ -7,7 +7,7 @@
   - JohnPreston.eucalyptus-network
   - JohnPreston.eucalyptus-setup
   vars:
-  - networking_mode:
+  - networking_mode: MANAGED-NOVLAN
 
 - hosts: all
   roles:
@@ -15,7 +15,8 @@
   - JohnPreston.eucalyptus-register
   - JohnPreston.eucalyptus-start
   vars:
-  - networking_mode:
+  - networking_mode: MANAGED-NOVLAN
+  - cpu_overcommit: 4
   vars_files:
   - vars/availability_zones.yml
 
@@ -23,7 +24,7 @@
   roles:
   - JohnPreston.eucalyptus-configure
   vars:
-  - networking_mode:
+  - networking_mode: MANAGED-NOVLAN
   - osg_provider: walrus
   vars_files:
   - vars/availability_zones.yml
