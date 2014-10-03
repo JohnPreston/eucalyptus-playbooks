@@ -1,0 +1,55 @@
+################################################################################
+#
+# Front-End Hosts
+#
+
+[clc]
+
+[walrus]
+
+[ufs]
+
+################################################################################
+#
+# Cluster Hosts
+#
+
+# CC of AZ-01
+[cc-az-01]
+
+# SC of AZ-01
+[sc-az-01]
+
+# NCs of AZ-01
+[nc-az-01]
+
+
+####################################################################
+#
+# Beyond this point, variables should be set in groups_vars !!!
+#
+
+# Defines all CCs
+[cc:children]
+cc-az-01
+
+# Define all SCs
+[sc:children]
+sc-az-01
+
+# Defines all NCs
+[nc:children]
+nc-az-01
+
+# Defines an Availability Zone / Cluster
+[az-01:children]
+cc-az-01
+sc-az-01
+nc-az-01
+
+# Defines all Eucalyptus JAVA Components
+[java_fe:children]
+clc
+walrus
+ufs
+sc

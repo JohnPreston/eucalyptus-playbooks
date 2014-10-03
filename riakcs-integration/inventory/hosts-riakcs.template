@@ -1,0 +1,7 @@
+################################################################################
+#
+# RIAK CS Nodes. As much as possible, do not use Eucalyptus hsots.
+# Do not have a RIAKCS node on the same machine as CLC
+#
+
+[riakcs_nodes]

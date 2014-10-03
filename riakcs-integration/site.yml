@@ -1,0 +1,46 @@
+
+---
+# Eucalyptus Cloud playbook - Step by Step setup
+#
+
+- hosts: riakcs_nodes
+  roles:
+  - JohnPreston.riakcs-cluster
+  - JohnPreston.riakcs-credentials
+  vars:
+  - vnet_defined: em1
+  - user_mail: johnpreston@ews-preston.net
+  - user_name: johneuca
+
+- hosts: all
+  roles:
+  - JohnPreston.eucalyptus-network
+  - JohnPreston.eucalyptus-setup
+  - JohnPreston.eucalyptus-initialize
+  - JohnPreston.eucalyptus-register
+  vars:
+  - euca_use_local_repo: true
+  - euca_local_repo_url: http://downloads.emea.lan/eucalyptus/4.0/centos/6/x86_64/
+  - euca2ools_local_repo_url: http://downloads.emea.lan/euca2ools/3.1/centos/6/x86_64/
+  - epel_replace: false
+  - elrepo_replace: true
+  - networking_mode: MANAGED
+  - cpu_overcommit: 4
+  vars_files:
+  - vars/availability_zones.yml
+
+- hosts: clc
+  roles:
+  - JohnPreston.eucalyptus-configure
+  vars:
+  - networking_mode: MANAGED
+  - osg_provider_name: riakcs
+  - osg_properties:
+    - {'name': 'objectstorage.s3provider.s3endpoint',
+       'value': "{{ hostvars[groups['riakcs_nodes'][0]]['riakcs_endpoint'] }}" }
+    - {'name': 'objectstorage.s3provider.s3accesskey',
+       'value': "{{ hostvars[groups['riakcs_nodes'][0]]['riakcs_akey'] }}" }
+    - {'name': 'objectstorage.s3provider.s3secretkey',
+       'value': "{{ hostvars[groups['riakcs_nodes'][0]]['riakcs_skey'] }}" }
+  vars_files:
+  - vars/availability_zones.yml
