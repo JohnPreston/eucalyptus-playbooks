@@ -3,9 +3,9 @@
 # VLAN configuration
 #
 #
-vnet_java: em2
+# vnet_java: em2
 #
-vlan_iface: em2
-# vlan_tag: 200
-# vlan_gw: 172.33.255.254
+# vlan_iface: em2
+# vlan_tag: 301
+# vlan_gw: 10.31.255.254
 #

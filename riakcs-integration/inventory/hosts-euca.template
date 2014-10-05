@@ -4,10 +4,12 @@
 #
 
 [clc]
+# nc-0 vlan_ip=172.16.0.1/27
 
 [walrus]
 
 [ufs]
+# nc-1 ufs_name=ufs-9992-0 vlan_ip=172.16.0.2/27
 
 ################################################################################
 #
@@ -16,12 +18,31 @@
 
 # CC of AZ-01
 [cc-az-01]
+# nc-2 cc_name=cc-9992-0 vlan_ip=10.30.0.1/16
 
 # SC of AZ-01
 [sc-az-01]
+# nc-2 sc_name=sc-9992-0 vlan_ip=10.30.0.1/16 vlan_tag=300
 
 # NCs of AZ-01
 [nc-az-01]
+# nc-3 vlan_ip=10.30.0.2/16
+# nc-7 vlan_ip=10.30.0.4/16
+
+# CC of AZ-02
+[cc-az-02]
+# nc-4 cc_name=cc-9992-1 vlan_ip=10.31.0.1/16
+
+
+# SC of AZ-02
+[sc-az-02]
+# nc-4 sc_name=sc-9992-1 vlan_ip=10.31.0.1/16 vlan_tag=301
+
+# NCs of AZ-02
+[nc-az-02]
+# nc-5 vlan_ip=10.31.0.2/16
+# nc-8 vlan_ip=10.31.0.3/16
+# nc-9 vlan_ip=10.31.0.4/16
 
 
 ####################################################################
@@ -32,14 +53,17 @@
 # Defines all CCs
 [cc:children]
 cc-az-01
+cc-az-02
 
 # Define all SCs
 [sc:children]
 sc-az-01
+sc-az-02
 
 # Defines all NCs
 [nc:children]
 nc-az-01
+nc-az-02
 
 # Defines an Availability Zone / Cluster
 [az-01:children]
@@ -47,9 +71,14 @@ cc-az-01
 sc-az-01
 nc-az-01
 
+[az-02:children]
+cc-az-02
+sc-az-02
+nc-az-02
+
+
 # Defines all Eucalyptus JAVA Components
 [java_fe:children]
 clc
 walrus
 ufs
-sc

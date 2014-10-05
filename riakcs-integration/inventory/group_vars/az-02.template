@@ -1,11 +1,12 @@
+
 ##################################################################
 #
 # AZ-01 variables
 #
 #
-# partition: az-01
+# partition: az-02
 #
 # vlan_iface: em2
-# vlan_tag: 300
-# vlan_gw: 10.30.255.254
+# vlan_tag: 301
+# vlan_gw: 10.31.255.254
 #

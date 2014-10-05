@@ -7,20 +7,31 @@
 
 sc_clusters:
 - {'partition': 'az-01', 'mode': 'das', 'properties': [ {'name': 'dasdevice', 'value': 'vg01'}]}
+- {'partition': 'az-02', 'mode': 'das', 'properties': [ {'name': 'dasdevice', 'value': 'vg01'}]}
 
 instance_dns_servers:
 - "8.8.8.8"
+- "192.168.1.100"
 
 instance_dns_domain: emea.lan
 
 pub_ips:
-- "109.104.120.41-109.104.120.59"
+- "109.104.120.20-109.104.120.59"
 
 clusters:
  - {"Name": "az-01", "MacPrefix": "d0:0d",
    "Subnet":
-     { "Name": "172.33.0.0",
-       "Subnet": "172.33.0.0",
+     { "Name": "10.30.0.0",
+       "Subnet": "10.30.0.0",
        "Netmask": "255.255.0.0",
-       "Gateway": "172.33.255.254"},
-       "PrivateIps": ["172.33.1.0-172.33.254.254"]}
+       "Gateway": "10.30.255.254"},
+       "PrivateIps": ["10.30.1.0-10.30.254.254"]}
+
+ - {"Name": "az-02", "MacPrefix": "d0:0d",
+   "Subnet":
+     { "Name": "10.31.0.0",
+       "Subnet": "10.31.0.0",
+       "Netmask": "255.255.0.0",
+       "Gateway": "10.31.255.254"},
+       "PrivateIps": ["10.31.1.0-10.31.254.254"]}
+

@@ -8,9 +8,9 @@
   - JohnPreston.riakcs-cluster
   - JohnPreston.riakcs-credentials
   vars:
-  - vnet_defined: em1
-  - user_mail: johnpreston@ews-preston.net
-  - user_name: johneuca
+  - vnet_defined: em2
+  - user_mail: john@eucalyptus.com
+  - user_name: john-euca
 
 - hosts: all
   roles:
@@ -19,12 +19,12 @@
   - JohnPreston.eucalyptus-initialize
   - JohnPreston.eucalyptus-register
   vars:
-  - euca_use_local_repo: true
-  - euca_local_repo_url: http://downloads.emea.lan/eucalyptus/4.0/centos/6/x86_64/
-  - euca2ools_local_repo_url: http://downloads.emea.lan/euca2ools/3.1/centos/6/x86_64/
+  - euca_use_local_repo: false
   - epel_replace: false
   - elrepo_replace: true
-  - networking_mode: MANAGED
+  - networking_mode: EDGE
+  - use_vlans: true
+  - vlan_routes: ["172.16.0.0/27", "10.30.0.0/16", "10.31.0.0/16"]
   - cpu_overcommit: 4
   vars_files:
   - vars/availability_zones.yml
@@ -33,7 +33,8 @@
   roles:
   - JohnPreston.eucalyptus-configure
   vars:
-  - networking_mode: MANAGED
+  - networking_mode: EDGE
+  - use_vlans: true
   - osg_provider_name: riakcs
   - osg_properties:
     - {'name': 'objectstorage.s3provider.s3endpoint',
