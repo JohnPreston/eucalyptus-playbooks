@@ -8,21 +8,21 @@ Requirements
 
 This playbook requires to have these roles setup from Ansible-Galaxy:
 
-- ![JohnPreston.riakcs-cluster](https://github.com/JohnPreston/riakcs-cluster)
-- 
-- ![JohnPreston.riakcs-credentials](https://github.com/JohnPreston/riakcs-credentials)
+- [JohnPreston.riakcs-cluster](https://github.com/JohnPreston/riakcs-cluster)
 
-- ![JohnPreston.eucalyptus-network](https://github.com/JohnPreston/eucalyptus-network)
+- [JohnPreston.riakcs-credentials](https://github.com/JohnPreston/riakcs-credentials)
 
-- ![JohnPreston.eucalyptus-setup](https://github.com/JohnPreston/eucalyptus-setup)
+- [JohnPreston.eucalyptus-network](https://github.com/JohnPreston/eucalyptus-network)
 
-- !JohnPreston.eucalyptus-initialize](https://github.com/JohnPreston/eucalyptus-initialize)
+- [JohnPreston.eucalyptus-setup](https://github.com/JohnPreston/eucalyptus-setup)
 
-- ![JohnPreston.eucalyptus-register](https://github.com/JohnPreston/eucalyptus-register)
+- [JohnPreston.eucalyptus-initialize](https://github.com/JohnPreston/eucalyptus-initialize)
 
-- ![JohnPreston.eucalyptus-start](https://github.com/JohnPreston/eucalyptus-start)
+- [JohnPreston.eucalyptus-register](https://github.com/JohnPreston/eucalyptus-register)
 
-- ![JohnPreston.eucalyptus-configure](https://github.com/JohnPreston/eucalyptus-configure)
+- [JohnPreston.eucalyptus-start](https://github.com/JohnPreston/eucalyptus-start)
+
+- [JohnPreston.eucalyptus-configure](https://github.com/JohnPreston/eucalyptus-configure)
 
 To set them all up, run
 
