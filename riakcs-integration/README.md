@@ -1,5 +1,5 @@
-Deploy Eucalyptus Cloud step-by-step
-=====================================
+Deploy Eucalyptus Cloud w/ RiakCS backend
+=========================================
 
 Requirements
 -------------
