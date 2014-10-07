@@ -7,14 +7,15 @@
 
 sc_clusters:
 - {'partition': 'az-01', 'mode': 'das', 'properties': [ {'name': 'dasdevice', 'value': 'vg01'}]}
+- {'partition': 'az-02', 'mode': 'das', 'properties': [ {'name': 'dasdevice', 'value': 'vg01'}]}
 
 instance_dns_servers:
-- "8.8.8.8"
+- "10.1.1.254"
 
-instance_dns_domain: emea.lan
+instance_dns_domain: eucalyptus.internal
 
 pub_ips:
-- "109.104.120.41-109.104.120.59"
+- "10.104.6.1-10.104.6.62"
 
 clusters:
  - {"Name": "az-01", "MacPrefix": "d0:0d",

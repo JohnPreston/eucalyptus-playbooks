@@ -5,7 +5,7 @@
 #
 # walrus_name=
 #
-# java_iface: em2
+# vnet_java: em2
 #
 # vlan_iface: em2
 # vlan_tag: 200

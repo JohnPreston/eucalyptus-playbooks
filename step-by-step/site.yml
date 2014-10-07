@@ -6,11 +6,6 @@
   roles:
   - JohnPreston.eucalyptus-network
   - JohnPreston.eucalyptus-setup
-  vars:
-  - networking_mode: MANAGED-NOVLAN
-
-- hosts: all
-  roles:
   - JohnPreston.eucalyptus-initialize
   - JohnPreston.eucalyptus-register
   - JohnPreston.eucalyptus-start
@@ -22,7 +17,9 @@
 
 - hosts: clc
   roles:
-  - JohnPreston.eucalyptus-configure
+  - JohnPreston.eucalyptus-configureOSG
+  - JohnPreston.eucalyptus-configureDNS
+  - JohnPreston.eucalyptus-configureStorage
   vars:
   - networking_mode: MANAGED-NOVLAN
   - osg_provider: walrus
