@@ -7,41 +7,48 @@
   roles:
   - JohnPreston.riakcs-cluster
   - JohnPreston.riakcs-credentials
+  - JohnPreston.riakcs-halb
   vars:
   - vnet_defined: em2
-  - user_mail: john@eucalyptus.com
+  - vrrp_riakcs_vip: 192.168.1.141
+  - user_mail: john@ews-network.com
   - user_name: john-euca
 
-- hosts: all
+- hosts: eucalyptus
   roles:
   - JohnPreston.eucalyptus-network
   - JohnPreston.eucalyptus-setup
   - JohnPreston.eucalyptus-initialize
   - JohnPreston.eucalyptus-register
   vars:
+  - yum_behaviour: latest
   - euca_use_local_repo: false
-  - epel_replace: false
+  - epel_replace: true
   - elrepo_replace: true
   - networking_mode: EDGE
   - use_vlans: true
-  - vlan_routes: ["172.16.0.0/27", "10.30.0.0/16", "10.31.0.0/16"]
+  - vlan_routes: ["172.16.0.0/27", "10.30.0.0/16"]
   - cpu_overcommit: 4
   vars_files:
   - vars/availability_zones.yml
 
 - hosts: clc
   roles:
-  - JohnPreston.eucalyptus-configure
+  - JohnPreston.eucalyptus-configureDNS
+  - JohnPreston.eucalyptus-configureStorage
+  - JohnPreston.eucalyptus-configureOSG
   vars:
+  - vrrp_riakcs_vip: 192.168.1.141
   - networking_mode: EDGE
   - use_vlans: true
   - osg_provider_name: riakcs
   - osg_properties:
     - {'name': 'objectstorage.s3provider.s3endpoint',
-       'value': "{{ hostvars[groups['riakcs_nodes'][0]]['riakcs_endpoint'] }}" }
+       'value': "http://{{ vrrp_riakcs_vip }}:8081" }
     - {'name': 'objectstorage.s3provider.s3accesskey',
        'value': "{{ hostvars[groups['riakcs_nodes'][0]]['riakcs_akey'] }}" }
     - {'name': 'objectstorage.s3provider.s3secretkey',
        'value': "{{ hostvars[groups['riakcs_nodes'][0]]['riakcs_skey'] }}" }
   vars_files:
   - vars/availability_zones.yml
+  - vars/dns.yml
