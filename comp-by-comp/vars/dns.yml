@@ -1,0 +1,3 @@
+dnsdomain: ews-network.net
+nameserver: ns1.ews-network.net
+nameserveraddress: 109.104.120.3

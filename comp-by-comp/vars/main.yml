@@ -1,0 +1,10 @@
+java_iface : em1
+clc_public_key_path : /tmp/clc-key
+networking_mode : EDGE
+iface_name : em2
+networking_mode : EDGE
+vnet_private : br0
+vnet_public : em1
+partition : cluster-01
+cc_iface: em1
+nc_iface: em1

@@ -10,7 +10,7 @@
   - JohnPreston.eucalyptus-register
   - JohnPreston.eucalyptus-start
   vars:
-  - networking_mode: MANAGED-NOVLAN
+  - networking_mode: EDGE
   - cpu_overcommit: 4
   vars_files:
   - vars/availability_zones.yml
@@ -21,7 +21,7 @@
   - JohnPreston.eucalyptus-configureDNS
   - JohnPreston.eucalyptus-configureStorage
   vars:
-  - networking_mode: MANAGED-NOVLAN
+  - networking_mode: EDGE
   - osg_provider: walrus
   vars_files:
   - vars/availability_zones.yml

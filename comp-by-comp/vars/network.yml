@@ -1,0 +1,16 @@
+instance_dns_servers:
+- "10.1.1.254"
+
+instance_dns_domain: eucalyptus.internal
+
+pub_ips:
+- "10.104.6.1-10.104.6.30"
+
+clusters:
+ - {"Name": "cluster-01", "MacPrefix": "d0:0d",
+   "Subnet":
+     { "Name": "172.33.0.0",
+       "Subnet": "172.33.0.0",
+       "Netmask": "255.255.0.0",
+       "Gateway": "172.33.255.253"},
+       "PrivateIps": ["172.33.1.1-172.33.5.253"]}

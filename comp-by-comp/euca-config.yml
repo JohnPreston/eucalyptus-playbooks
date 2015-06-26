@@ -1,0 +1,12 @@
+
+- hosts:
+  - clc
+  vars_files:
+  - vars/main.yml
+  - vars/osg.yml
+  - vars/dns.yml
+  - vars/network.yml
+  roles:
+  - JohnPreston.eucalyptus-configureOSG
+  - JohnPreston.eucalyptus-configureDNS
+  - JohnPreston.eucalyptus-configureNetwork
